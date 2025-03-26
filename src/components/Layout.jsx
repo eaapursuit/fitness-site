@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <AnimatedTransition locationKey={location.pathname}>
-        <main className="flex-1">
+        <main className="flex-1 pt-24">
           {children}
         </main>
       </AnimatedTransition>

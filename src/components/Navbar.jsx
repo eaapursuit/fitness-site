@@ -70,7 +70,7 @@ const Navbar = () => {
         
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="absolute left-0 right-0 top-full glass px-4 py-5 shadow-lg md:hidden animate-fade-in">
+          <div className="fixed left-0 right-0 top-[calc(var(--header-height,56px))] bg-white px-4 py-5 shadow-lg md:hidden animate-fade-in">
             <nav className="flex flex-col space-y-4">
               {[
                 { title: 'Home', path: '/' },
