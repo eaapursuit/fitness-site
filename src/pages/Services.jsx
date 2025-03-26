@@ -1,9 +1,9 @@
-
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import FAQ from '@/components/FAQ';
 
 const ServiceCard = ({ 
   title, 
@@ -73,6 +73,25 @@ const ServiceCard = ({
 };
 
 const Services = () => {
+  const faqs = [
+    {
+      question: "How often should we train together?",
+      answer: "The frequency of training depends on your goals, current fitness level, and schedule. For most clients, I recommend 2-3 sessions per week for optimal progress, but we'll determine the best frequency for your specific situation during our initial consultation."
+    },
+    {
+      question: "Do you provide nutrition plans?",
+      answer: "Yes, nutrition guidance is included in all my coaching packages. Depending on your package, this ranges from basic guidelines to comprehensive meal plans. I also offer specialized nutrition consultations for those wanting to focus specifically on their diet."
+    },
+    {
+      question: "What if I have an injury or medical condition?",
+      answer: "Safety is my top priority. I'm experienced in working with clients who have various injuries and medical conditions. During our initial consultation, we'll discuss any concerns, and I'll design a program that works with your limitations while helping you progress safely."
+    },
+    {
+      question: "How long before I see results?",
+      answer: "Results vary based on individual factors, consistency, and goals. Most clients notice initial changes within 2-4 weeks, with more significant results after 8-12 weeks of consistent training and nutrition. We'll track your progress regularly to ensure you're moving toward your goals."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -222,36 +241,12 @@ const Services = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mb-8">
               Find answers to common questions about my services and approach.
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                question: "How often should we train together?",
-                answer: "The frequency of training depends on your goals, current fitness level, and schedule. For most clients, I recommend 2-3 sessions per week for optimal progress, but we'll determine the best frequency for your specific situation during our initial consultation."
-              },
-              {
-                question: "Do you provide nutrition plans?",
-                answer: "Yes, nutrition guidance is included in all my coaching packages. Depending on your package, this ranges from basic guidelines to comprehensive meal plans. I also offer specialized nutrition consultations for those wanting to focus specifically on their diet."
-              },
-              {
-                question: "What if I have an injury or medical condition?",
-                answer: "Safety is my top priority. I'm experienced in working with clients who have various injuries and medical conditions. During our initial consultation, we'll discuss any concerns, and I'll design a program that works with your limitations while helping you progress safely."
-              },
-              {
-                question: "How long before I see results?",
-                answer: "Results vary based on individual factors, consistency, and goals. Most clients notice initial changes within 2-4 weeks, with more significant results after 8-12 weeks of consistent training and nutrition. We'll track your progress regularly to ensure you're moving toward your goals."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="border border-border rounded-lg p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-sm">
-                <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                <p className="text-muted-foreground">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQ faqs={faqs} />
         </div>
       </section>
     </div>
